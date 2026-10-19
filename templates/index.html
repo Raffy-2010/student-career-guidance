@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Career Guidance System</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            color: #1e293b;
+        }
+
+        header {
+            background: #123b69;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 28px;
+        }
+
+        header p {
+            margin: 0;
+            color: #dbeafe;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px #00000012;
+        }
+
+        h2 {
+            color: #123b69;
+        }
+
+        .field {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            background: white;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #1763aa;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #104b83;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            background: #eff6ff;
+            border-left: 5px solid #1763aa;
+            border-radius: 8px;
+        }
+
+        .result h3 {
+            color: #123b69;
+        }
+
+        .note {
+            color: #64748b;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Student Career Guidance System</h1>
+        <p>Discover career paths that match your strengths and interests.</p>
+    </header>
+
+    <main class="container">
+        <h2>Career Assessment</h2>
+        <p>Select the level that best describes you in each area.</p>
+
+        <form method="POST">
+            <div class="field">
+                <label for="math">Mathematics</label>
+                <select id="math" name="math" required>
+                    <option value="">Choose a level</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="science">Science</label>
+                <select id="science" name="science" required>
+                    <option value="">Choose a level</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="english">English and Communication</label>
+                <select id="english" name="english" required>
+                    <option value="">Choose a level</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="creativity">Creativity</label>
+                <select id="creativity" name="creativity" required>
+                    <option value="">Choose a level</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="helping_people">Interest in Helping People</label>
+                <select id="helping_people" name="helping_people" required>
+                    <option value="">Choose a level</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="technology">Interest in Technology</label>
+                <select id="technology" name="technology" required>
+                    <option value="">Choose a level</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <button type="submit">Find My Career Path</button>
+        </form>
+
+        {% if result %}
+        <section class="result">
+            <h3>Suggested Career Area: {{ result }}</h3>
+            <p>{{ description }}</p>
+            <p>Use this result as a starting point for further research,
+            not as a final decision about your future.</p>
+        </section>
+        {% endif %}
+
+        <p class="note">
+            Note: This is an educational prototype using sample training data.
+            Its suggestions are not professionally validated career assessments.
+        </p>
+    </main>
+
+    <footer>
+        Student Career Guidance System | Educational Project
+    </footer>
+</body>
+</html>
